@@ -1,0 +1,215 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/*초기화*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+    
+}
+
+header {
+    padding: 32px;
+    /*헤어영역, 로고 및 네비 리스트 위치 이동*/
+}
+
+img {
+    /*이미지 전체 사이즈. 이번 작업은 스마트폰 사이즈에서 데스크탑으로 변경*/
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    /*vertical-align: middle;은 인라인 요소 또는
+    테이블 셀 요소(td) 안에서 해당 요소의 수직 정렬을
+    가운데(middle) 로 맞추는 CSS 속성입니다. 텍스트와 이미지가 수직 중앙 정렬.
+    */
+}
+
+footer {
+    padding: 20px 30px;
+    /*하단 풋터 텍스트 패딩 적용*/
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    /*
+    마진레프트 오토, 마진라이트 오토는 css에서 요소를 수평 가운데 정렬할때 사용
+    양쪽 마진을 자동으로 설정해 브라우저가 남는 공간을 좌우 균등하게 만들어,
+    요소가 가운데 정렬된다.
+
+    diaplay : block or flex 일 때 적용되며. 요소의 width가 지정되어야 수평 가운데 정렬.
+    */
+    background-color: #fff;
+}
+
+
+
+.style-logo {
+    display: block;
+    width: 289px;
+    margin-left: auto;  /*가운데 정렬*/
+    margin-right:auto ; /*가운데 정렬*/
+}
+
+
+.style-nav ul {
+    list-style-type: none;
+}
+
+.style-nav li {
+    text-decoration: none;
+    color: #2f322a;
+    text-align: center;
+    display: block;  /*블록처리하면 텍스트 앞 점 없어지고 가운데 정렬 유지.*/
+    text-transform: uppercase; /*모든 글자 대문자로.*/
+    padding: 8px; /*노블레스 위, 레스토랑 하단, 텍스트 사이사이, 양옆*/
+}
+
+
+.hero {
+    background-image: url(../source/image4.jpg);
+    background-size: cover;
+    padding: 20px 20px 50px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 23px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 120px;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.button {
+    border: 2px solid #fff;
+    padding: 8px 30px;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.info-box-tan {
+    background-color: lightslategray;
+    color: #fff;
+    padding: 30px 30px 60px;
+    text-align: center;
+}
+
+.info-box-dark {
+    background-color: darkslategray;
+    color: #fff;
+    padding: 30px 30px 60px; /*위 30 좌우30 아래60*/
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*스마트폰에서 태블릿 변경할때 float 땜시 함*/
+.col {
+    width: 100%;
+}
+.row:before, .row:after {
+    content: "";
+    display: table;
+}
+.row:after {
+    clear: both;
+}
+
+
+
+/*table  시작*/
+
+@media(min-width:768px) {
+    body {
+        max-width: 778;
+        /*너비가 768이상 일때 바디의 최대 너비를 778로 제한*/
+    }
+
+    .style-nav ul li {
+        display: inline-block;
+    }
+
+    .style-nav ul {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 90px;
+    }
+
+    h2 {
+        margin-bottom: 16px;
+    }
+
+    .col-md-one-half {
+        width: 50%;
+    }
+    .col {
+        float: left;
+        padding: 20px 7px 14px;
+    }
+}
+
+
+/*desk top*/
+
+@media(min-width:1024px) {
+    body {
+        max-width: 1200px;
+    }
+
+    .style-logo {
+        float: left;
+    }
+
+    .style-nav {
+        float: right;
+    }
+
+    .col-lg-one-fourth {
+        width: 25%;
+    }
+}
